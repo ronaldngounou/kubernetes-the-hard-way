@@ -10,6 +10,8 @@ In this section you will generate kubeconfig files for the `kubelet` and the `ad
 
 When generating kubeconfig files for Kubelets the client certificate matching the Kubelet's node name must be used. This will ensure Kubelets are properly authorized by the Kubernetes [Node Authorizer](https://kubernetes.io/docs/admin/authorization/node/).
 
+TO DO: PR to update this link.
+
 > The following commands must be run in the same directory used to generate the SSL certificates during the [Generating TLS Certificates](04-certificate-authority.md) lab.
 
 Generate a kubeconfig file for the node-0 worker node:
