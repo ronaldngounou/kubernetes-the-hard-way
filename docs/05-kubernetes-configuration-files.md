@@ -10,7 +10,7 @@ In this section you will generate kubeconfig files for the `kubelet` and the `ad
 
 When generating kubeconfig files for Kubelets the client certificate matching the Kubelet's node name must be used. This will ensure Kubelets are properly authorized by the Kubernetes [Node Authorizer](https://kubernetes.io/docs/admin/authorization/node/).
 
-TO DO: PR to update this link.
+TO DO: PR to update this
 
 > The following commands must be run in the same directory used to generate the SSL certificates during the [Generating TLS Certificates](04-certificate-authority.md) lab.
 
@@ -46,6 +46,21 @@ Results:
 node-0.kubeconfig
 node-1.kubeconfig
 ```
+
+These files are used to configure the kubelet on each worker node to securely communicate with the Kubernetes API server.
+Purpose of node-0.kubeconfig and node-1.kubeconfig:
+Authentication:
+
+These kubeconfig files contain the client certificate and private key for the kubelet on each worker node.
+The kubelet uses these credentials to authenticate itself to the Kubernetes API server.
+Authorization:
+
+The kubelet is authorized by the Kubernetes Node Authorizer, which ensures that the kubelet can only access resources associated with its node.
+Cluster Configuration:
+
+These kubeconfig files specify the API server's endpoint (--server) and the CA certificate (--certificate-authority) to verify the API server's identity.
+
+
 
 ### The kube-proxy Kubernetes Configuration File
 
