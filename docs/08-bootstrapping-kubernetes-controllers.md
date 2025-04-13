@@ -89,7 +89,7 @@ Move the `kube-scheduler` kubeconfig into place:
 ```bash
 mv kube-scheduler.kubeconfig /var/lib/kubernetes/
 ```
-
+Missing the kube-scheduler.kubeconfig in /etc/kubernetes/config
 Create the `kube-scheduler.yaml` configuration file:
 
 ```bash
